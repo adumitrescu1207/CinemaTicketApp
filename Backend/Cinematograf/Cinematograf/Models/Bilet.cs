@@ -9,8 +9,8 @@
         public DateTime DataRezervare { get; set; }
         public string Status { get; set; } = "In asteptare";
 
-        public Proiectie Proiectie { get; set; }
-        public Utilizator Utilizator { get; set; }
+        public Proiectie? Proiectie { get; set; }
+        public Utilizator? Utilizator { get; set; }
         public Loc? Loc { get; set; }
     }
 }

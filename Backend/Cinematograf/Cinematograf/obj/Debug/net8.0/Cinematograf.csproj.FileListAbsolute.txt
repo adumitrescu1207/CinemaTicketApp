@@ -137,3 +137,4 @@ C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinemat
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\Cinematograf.pdb
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\Cinematograf.genruntimeconfig.cache
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\ref\Cinematograf.dll
+C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\Cinematograf.sourcelink.json

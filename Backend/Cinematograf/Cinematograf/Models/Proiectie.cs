@@ -11,8 +11,8 @@ namespace Cinematograf.Models
         public DateTime? DataOraSfarsit { get; set; }
         public decimal Pret { get; set; }
 
-        public Film Film { get; set; }
-        public Sala Sala { get; set; }
-        public ICollection<Bilet> Bilete { get; set; }
+        public Film? Film { get; set; }
+        public Sala? Sala { get; set; }
+        public ICollection<Bilet>? Bilete { get; set; }
     }
 }

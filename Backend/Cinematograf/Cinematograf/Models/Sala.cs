@@ -7,8 +7,8 @@
         public int Randuri { get; set; }
         public int LocuriPeRand { get; set; }
 
-        public ICollection<Proiectie> Proiectii { get; set; }
-        public ICollection<Loc> Locuri { get; set; }
+        public ICollection<Proiectie>? Proiectii { get; set; }
+        public ICollection<Loc>? Locuri { get; set; }
     }
 }
 
