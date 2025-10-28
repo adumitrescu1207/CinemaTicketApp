@@ -1,0 +1,361 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Cinematograf",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Film": {
+      "get": {
+        "tags": [
+          "Film"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Film"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Film"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Film"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Film"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Film/{id}": {
+      "get": {
+        "tags": [
+          "Film"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Film"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Film"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Film"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Film"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Film"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Bilet": {
+        "type": "object",
+        "properties": {
+          "biletId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "proiectieId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "utilizatorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dataRezervare": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "proiectie": {
+            "$ref": "#/components/schemas/Proiectie"
+          },
+          "utilizator": {
+            "$ref": "#/components/schemas/Utilizator"
+          },
+          "loc": {
+            "$ref": "#/components/schemas/Loc"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Film": {
+        "type": "object",
+        "properties": {
+          "filmId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "titlu": {
+            "type": "string",
+            "nullable": true
+          },
+          "descriere": {
+            "type": "string",
+            "nullable": true
+          },
+          "durata": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataLansare": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gen": {
+            "type": "string",
+            "nullable": true
+          },
+          "proiectii": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Proiectie"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Loc": {
+        "type": "object",
+        "properties": {
+          "locId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "salaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numarRand": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numarLoc": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sala": {
+            "$ref": "#/components/schemas/Sala"
+          },
+          "bilete": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Bilet"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Proiectie": {
+        "type": "object",
+        "properties": {
+          "proiectieId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "filmId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "salaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataOraStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataOraSfarsit": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "pret": {
+            "type": "number",
+            "format": "double"
+          },
+          "film": {
+            "$ref": "#/components/schemas/Film"
+          },
+          "sala": {
+            "$ref": "#/components/schemas/Sala"
+          },
+          "bilete": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Bilet"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Sala": {
+        "type": "object",
+        "properties": {
+          "salaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nume": {
+            "type": "string",
+            "nullable": true
+          },
+          "randuri": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locuriPeRand": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "proiectii": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Proiectie"
+            },
+            "nullable": true
+          },
+          "locuri": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Loc"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utilizator": {
+        "type": "object",
+        "properties": {
+          "utilizatorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nume": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "parolaHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefon": {
+            "type": "string",
+            "nullable": true
+          },
+          "bilete": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Bilet"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
