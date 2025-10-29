@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <Container className="my-5">
       <div className="text-center mb-5">
-        <h1>Welcome to Movie Booking!</h1>
+        <h1>Welcome to Cinema Ticket!</h1>
         <p>Book your favorite movies with just a few clicks.</p>
       </div>
 

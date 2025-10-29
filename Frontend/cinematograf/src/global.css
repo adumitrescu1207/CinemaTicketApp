@@ -1,0 +1,60 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f7e3a5;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #212529;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #111;
+}
+
+p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.navbar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+}
+
+footer p {
+  color: #f8f9fa;
+  font-size: 0.9rem;
+}
+
+.btn-primary, .btn-success {
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover, .btn-success:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+form input, form textarea, form select {
+  border-radius: 8px !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 32px;
+  }
+}
