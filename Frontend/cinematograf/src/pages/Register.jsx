@@ -14,12 +14,36 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // TODO: backend 
-    console.log("Register data:", formData);
-  };
+  try {
+    const response = await fetch("https://localhost:7278/api/Auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Nume: formData.nume,
+        Prenume: formData.prenume,
+        Email: formData.email,
+        ParolaHash: formData.parola,
+        Telefon: formData.telefon,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(errorText);
+    }
+
+    alert("Cont creat cu succes!");
+    window.location.href = "/login";
+  } catch (error) {
+    console.error("Eroare la înregistrare:", error);
+    alert("Eroare: " + error.message);
+  }
+};
 
   return (
     <Container
