@@ -130,7 +130,6 @@ C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinemat
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\Cinemato.631D6D52.Up2Date
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\Cinematograf.dll
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\refint\Cinematograf.dll
@@ -138,3 +137,6 @@ C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinemat
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\Cinematograf.genruntimeconfig.cache
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\ref\Cinematograf.dll
 C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\Cinematograf.sourcelink.json
+C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\alexa.ALEXANDRA\Desktop\Master\Baze de date\Cinematograf\ProiectCinematograf\Backend\Cinematograf\Cinematograf\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
