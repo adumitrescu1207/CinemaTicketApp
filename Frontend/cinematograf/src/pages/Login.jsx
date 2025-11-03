@@ -7,18 +7,45 @@ const Login = () => {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Login data:", formData);
-    // TODO: connect backend login endpoint
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch("https://localhost:7278/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: formData.email,
+        parolaHash: formData.password
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      const jwt = data.token;
+      localStorage.setItem("jwt", jwt);
+      alert("Autentificare reușită!");
+      window.location.href = "/";
+    } else {
+      const errorText = await response.text();
+      alert(errorText || "Eroare la autentificare.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Serverul nu răspunde.");
+  }
+};
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
+    <Container
+      className="d-flex justify-content-center align-items-center"
+      style={{ minHeight: "80vh" }}
+    >
       <Row className="w-100 justify-content-center">
         <Col md={6} lg={4}>
           <Card className="shadow-lg border-0 rounded-4">
@@ -53,9 +80,10 @@ const Login = () => {
                 <Button
                   variant="dark"
                   type="submit"
+                  disabled={loading}
                   className="w-100 py-2 fw-semibold"
                 >
-                  Login
+                  {loading ? "Logging in..." : "Login"}
                 </Button>
               </Form>
 

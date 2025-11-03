@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Cinematograf.Models.Utilizator",
+        "Type": "Cinematograf.Models.LoginDto",
         "IsRequired": true
       }
     ],

@@ -46,7 +46,7 @@ namespace Cinematograf.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult> Login([FromBody] Utilizator dto)
+        public async Task<ActionResult> Login([FromBody] LoginDto dto)
         {
             var utilizator = await _context.Utilizatori.FirstOrDefaultAsync(u => u.Email == dto.Email);
             if (utilizator == null) return BadRequest("Utilizator inexistent.");
@@ -56,15 +56,7 @@ namespace Cinematograf.Controllers
 
             var token = CreateToken(utilizator);
 
-            Response.Cookies.Append("jwt", token, new CookieOptions
-            {
-                HttpOnly = true,
-                SameSite = SameSiteMode.Strict,
-                Secure = true,
-                Expires = DateTime.UtcNow.AddHours(2)
-            });
-
-            return Ok(new { message = "Autentificare reușită!" });
+            return Ok(new { message = "Autentificare reușită!", token });
         }
 
         [HttpGet("me")]
@@ -72,8 +64,11 @@ namespace Cinematograf.Controllers
         {
             try
             {
-                var jwt = Request.Cookies["jwt"];
-                if (jwt == null) return Unauthorized();
+                var authHeader = Request.Headers["Authorization"].ToString();
+                if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+                    return Unauthorized(new { message = "Token lipsă sau invalid" });
+
+                var jwt = authHeader.Substring("Bearer ".Length).Trim();
 
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var key = Encoding.UTF8.GetBytes(_config["Jwt:Key"]);
@@ -82,7 +77,8 @@ namespace Cinematograf.Controllers
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
-                    ValidateAudience = false
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
                 }, out SecurityToken validatedToken);
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
@@ -102,8 +98,7 @@ namespace Cinematograf.Controllers
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-            Response.Cookies.Delete("jwt");
-            return Ok("Delogat cu succes.");
+            return Ok(new { message = "Delogat cu succes." });
         }
 
         private string CreateToken(Utilizator utilizator)

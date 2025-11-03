@@ -45,17 +45,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Utilizator"
+                "$ref": "#/components/schemas/LoginDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Utilizator"
+                "$ref": "#/components/schemas/LoginDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Utilizator"
+                "$ref": "#/components/schemas/LoginDto"
               }
             }
           }
@@ -1249,6 +1249,20 @@
             "items": {
               "$ref": "#/components/schemas/Bilet"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "parolaHash": {
+            "type": "string",
             "nullable": true
           }
         },
