@@ -125,27 +125,6 @@
   },
   {
     "ContainingType": "Cinematograf.Controllers.BiletController",
-    "Method": "PutBilet",
-    "RelativePath": "api/Bilet/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "bilet",
-        "Type": "Cinematograf.Models.Bilet",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Cinematograf.Controllers.BiletController",
     "Method": "DeleteBilet",
     "RelativePath": "api/Bilet/{id}",
     "HttpMethod": "DELETE",
@@ -159,6 +138,58 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cinematograf.Controllers.BiletController",
+    "Method": "GetLocuriOcupate",
+    "RelativePath": "api/Bilet/ocupate/{proiectieId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "proiectieId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Cinematograf.Controllers.BiletController",
+    "Method": "GetBileteByUtilizator",
+    "RelativePath": "api/Bilet/utilizator/{utilizatorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "utilizatorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cinematograf.Models.Bilet, Cinematograf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Cinematograf.Controllers.FilmController",
@@ -349,6 +380,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cinematograf.Controllers.LocController",
+    "Method": "GetLocuriBySala",
+    "RelativePath": "api/Loc/bysala/{salaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "salaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cinematograf.Models.Loc, Cinematograf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Cinematograf.Controllers.ProiectieController",
     "Method": "GetProiectii",
     "RelativePath": "api/Proiectie",
@@ -456,6 +513,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cinematograf.Controllers.ProiectieController",
+    "Method": "GetProiectiiByFilm",
+    "RelativePath": "api/Proiectie/byfilm/{filmId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Cinematograf.Models.ProiectieDto, Cinematograf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Cinematograf.Controllers.SalaController",

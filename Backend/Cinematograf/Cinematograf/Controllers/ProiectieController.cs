@@ -37,6 +37,30 @@ namespace Cinematograf.Controllers
             return proiectie;
         }
 
+        [HttpGet("byfilm/{filmId}")]
+        public async Task<ActionResult<IEnumerable<ProiectieDto>>> GetProiectiiByFilm(int filmId)
+        {
+            var proiectii = await _context.Proiectii
+                .Include(p => p.Film)
+                .Include(p => p.Sala)
+                .Where(p => p.FilmId == filmId)
+                .Select(p => new ProiectieDto
+                {
+                    ProiectieId = p.ProiectieId,
+                    TitluFilm = p.Film.Titlu,
+                    NumeSala = p.Sala.Nume,
+                    DataOraStart = p.DataOraStart,
+                    DataOraSfarsit = (DateTime)p.DataOraSfarsit,
+                    Pret = p.Pret
+                })
+                .ToListAsync();
+
+            if (!proiectii.Any()) return NotFound();
+            return Ok(proiectii);
+        }
+
+
+
         [HttpPost]
         public async Task<ActionResult<Proiectie>> PostProiectie(Proiectie proiectie)
         {

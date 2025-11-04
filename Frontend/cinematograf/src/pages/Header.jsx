@@ -52,9 +52,13 @@ const handleLogout = () => {
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
 
+            {user && (
+              <Nav.Link as={Link} to="/book"><strong>Book Ticket</strong></Nav.Link>
+            )}
+
             {user ? (
               <>
-                <span className="text-light me-3">
+                <span className="text-light m-4">
                   Bun venit, <strong>{user.nume}</strong>!
                 </span>
                 <Button

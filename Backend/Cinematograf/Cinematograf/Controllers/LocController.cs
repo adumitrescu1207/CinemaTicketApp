@@ -30,6 +30,24 @@ namespace Cinematograf.Controllers
             return loc;
         }
 
+        [HttpGet("bysala/{salaId}")]
+        public async Task<ActionResult<IEnumerable<Loc>>> GetLocuriBySala(int salaId)
+        {
+            var locuri = await _context.Locuri
+                .Where(l => l.SalaId == salaId)
+                .Include(l => l.Sala)
+                .OrderBy(l => l.NumarRand)
+                .ThenBy(l => l.NumarLoc)
+                .ToListAsync();
+
+            if (!locuri.Any())
+                return NotFound($"Nu există locuri pentru sala cu ID {salaId}.");
+
+            return Ok(locuri);
+        }
+
+
+
         [HttpPost]
         public async Task<ActionResult<Loc>> PostLoc(Loc loc)
         {

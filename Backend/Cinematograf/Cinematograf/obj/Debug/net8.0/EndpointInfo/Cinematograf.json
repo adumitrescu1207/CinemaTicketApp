@@ -214,46 +214,6 @@
           }
         }
       },
-      "put": {
-        "tags": [
-          "Bilet"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Bilet"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Bilet"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Bilet"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "delete": {
         "tags": [
           "Bilet"
@@ -272,6 +232,107 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bilet/utilizator/{utilizatorId}": {
+      "get": {
+        "tags": [
+          "Bilet"
+        ],
+        "parameters": [
+          {
+            "name": "utilizatorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Bilet"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Bilet"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Bilet"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Bilet/ocupate/{proiectieId}": {
+      "get": {
+        "tags": [
+          "Bilet"
+        ],
+        "parameters": [
+          {
+            "name": "proiectieId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -586,6 +647,55 @@
         }
       }
     },
+    "/api/Loc/bysala/{salaId}": {
+      "get": {
+        "tags": [
+          "Loc"
+        ],
+        "parameters": [
+          {
+            "name": "salaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Loc"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Loc"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Loc"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Proiectie": {
       "get": {
         "tags": [
@@ -767,6 +877,55 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Proiectie/byfilm/{filmId}": {
+      "get": {
+        "tags": [
+          "Proiectie"
+        ],
+        "parameters": [
+          {
+            "name": "filmId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProiectieDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProiectieDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProiectieDto"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -1308,6 +1467,36 @@
               "$ref": "#/components/schemas/Bilet"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProiectieDto": {
+        "type": "object",
+        "properties": {
+          "proiectieId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "titluFilm": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeSala": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataOraStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataOraSfarsit": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "pret": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false
