@@ -93,7 +93,7 @@ const BookTicket = () => {
 
   return (
     <Container className="py-5">
-      <Card className="shadow-lg p-4 mx-auto" style={{ maxWidth: "800px", borderRadius: "12px" }}>
+      <Card className="shadow-lg p-4 mx-auto" style={{ maxWidth: "1600px", borderRadius: "12px" }}>
         <h2 className="text-center mb-4">Rezervare Bilet</h2>
 
         <Form.Group className="mb-3">
@@ -141,7 +141,7 @@ const BookTicket = () => {
                 const locuriRand = locuri.filter(l => l.numarRand === randCurent);
 
                 return (
-                  <div key={randCurent} className="d-flex align-items-center gap-2">
+                  <div key={randCurent} className="d-flex align-items-center">
                     <span style={{ width: "30px", textAlign: "center", fontWeight: "bold" }}>
                       {randCurent}
                     </span>
