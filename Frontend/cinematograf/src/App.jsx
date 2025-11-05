@@ -7,6 +7,7 @@ import Footer from "./pages/Footer";
 import Login from './pages/Login';
 import Register from './pages/Register';
 import BookTicket from './pages/BookTicket';
+import MyAccount from './pages/MyAccount';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/book" element={<BookTicket />} />
+            <Route path="myaccount" element={<MyAccount />} />
           </Routes>
         </main>
         <Footer />

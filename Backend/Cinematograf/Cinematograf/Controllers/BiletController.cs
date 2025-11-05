@@ -51,6 +51,8 @@ namespace Cinematograf.Controllers
             var bilete = await _context.Bilete
                 .Include(b => b.Proiectie)
                     .ThenInclude(p => p.Film)
+                .Include(b => b.Proiectie)
+                    .ThenInclude(p => p.Sala)
                 .Include(b => b.Loc)
                 .Include(b => b.Utilizator)
                 .Where(b => b.UtilizatorId == utilizatorId)
@@ -100,6 +102,10 @@ namespace Cinematograf.Controllers
                 bilet.DataRezervare = DateTime.UtcNow;
                 if (string.IsNullOrEmpty(bilet.Status))
                     bilet.Status = "In asteptare";
+
+                var proiectie = await _context.Proiectii.FindAsync(bilet.ProiectieId);
+                if (proiectie == null) return BadRequest("Proiecție invalidă.");
+                bilet.SalaId = proiectie.SalaId;
 
                 _context.Bilete.Add(bilet);
                 await _context.SaveChangesAsync();

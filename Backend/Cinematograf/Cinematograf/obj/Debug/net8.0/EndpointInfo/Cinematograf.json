@@ -1323,6 +1323,11 @@
             "format": "int32",
             "nullable": true
           },
+          "salaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "dataRezervare": {
             "type": "string",
             "format": "date-time"
@@ -1339,6 +1344,9 @@
           },
           "loc": {
             "$ref": "#/components/schemas/Loc"
+          },
+          "sala": {
+            "$ref": "#/components/schemas/Sala"
           }
         },
         "additionalProperties": false

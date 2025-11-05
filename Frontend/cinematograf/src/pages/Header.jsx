@@ -56,6 +56,11 @@ const handleLogout = () => {
               <Nav.Link as={Link} to="/book"><strong>Book Ticket</strong></Nav.Link>
             )}
 
+            {user && (
+              <Nav.Link as={Link} to="/myaccount"><strong>My account</strong></Nav.Link>
+            )}
+
+
             {user ? (
               <>
                 <span className="text-light m-4">

@@ -119,16 +119,16 @@ const BookTicket = () => {
           <Form.Group className="mb-3">
             <Form.Label>Proiecție</Form.Label>
             <Form.Select
-              value={selectedProiectie || ""}
-              onChange={(e) => setSelectedProiectie(e.target.value)}
-            >
-              <option value="">Selectează proiecția</option>
-              {proiectii.map(p => (
-                <option key={p.proiectieId} value={p.proiectieId}>
-                  {new Date(p.dataOraStart).toLocaleString()} — Sala {p.sala?.nume || "??"}
-                </option>
-              ))}
-            </Form.Select>
+  value={selectedProiectie || ""}
+  onChange={(e) => setSelectedProiectie(e.target.value)}
+>
+  <option value="">Selectează proiecția</option>
+  {proiectii.map(p => (
+    <option key={p.proiectieId} value={p.proiectieId}>
+      {new Date(p.dataOraStart).toLocaleString()} — {p.numeSala}
+    </option>
+  ))}
+</Form.Select>
           </Form.Group>
         )}
 
