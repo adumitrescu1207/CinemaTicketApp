@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Container, Nav, Tab, Row, Col, Form, Button, Table, Card } from "react-bootstrap";
+import { Container, Nav, Tab, Row, Col, Form, Button, Card } from "react-bootstrap";
+import QRCode from "qrcode";
 
 const MyAccount = () => {
   const [user, setUser] = useState(null);
   const [bilete, setBilete] = useState([]);
+  const [qrCodes, setQrCodes] = useState({});
   const [message, setMessage] = useState("");
   const token = localStorage.getItem("jwt");
 
-  // 🔹 Încarcă datele utilizatorului
   useEffect(() => {
     fetch("https://localhost:7278/api/auth/me", {
       headers: { Authorization: `Bearer ${token}` },
@@ -17,21 +18,37 @@ const MyAccount = () => {
       .catch(err => console.error(err));
   }, []);
 
-  // 🔹 Încarcă biletele utilizatorului
   useEffect(() => {
-  if (!user) return;
+    if (!user) return;
 
-  fetch(`https://localhost:7278/api/bilet/utilizator/${user.utilizatorId}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  })
-    .then(res => res.ok ? res.json() : [])
-    .then(data => setBilete(data))
-    .catch(err => console.error(err));
-}, [user]);
+    fetch(`https://localhost:7278/api/bilet/utilizator/${user.utilizatorId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then(res => res.ok ? res.json() : [])
+      .then(async (data) => {
+        setBilete(data);
 
-  // 🔹 Salvează modificările contului
+        const qrMap = {};
+        for (const b of data) {
+          const qrData = {
+            biletId: b.biletId,
+            film: b.proiectie?.film?.titlu,
+            dataOra: b.proiectie?.dataOraStart,
+            sala: b.proiectie?.sala?.nume || b.sala?.nume,
+            rand: b.loc?.numarRand,
+            loc: b.loc?.numarLoc,
+            status: b.status
+          };
+          qrMap[b.biletId] = await QRCode.toDataURL(JSON.stringify(qrData));
+        }
+        setQrCodes(qrMap);
+      })
+      .catch(err => console.error(err));
+  }, [user]);
+
   const handleSave = async () => {
     if (!user) return;
+
     const response = await fetch(`https://localhost:7278/api/utilizator/${user.utilizatorId}`, {
       method: "PUT",
       headers: {
@@ -40,6 +57,7 @@ const MyAccount = () => {
       },
       body: JSON.stringify(user),
     });
+
     if (response.ok) setMessage("✅ Datele au fost actualizate cu succes!");
     else setMessage("❌ Eroare la actualizare.");
   };
@@ -102,32 +120,41 @@ const MyAccount = () => {
                   {bilete.length === 0 ? (
                     <p>Nu ai bilete rezervate.</p>
                   ) : (
-                    <Table striped bordered hover>
-                      <thead>
-                        <tr>
-                          <th>Film</th>
-                          <th>Data & Ora</th>
-                          <th>Sala</th>
-                          <th>Rand</th>
-                          <th>Loc</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {bilete.map((b) => (
-                          <tr key={b.biletId}>
-                            <td>{b.proiectie?.film?.titlu}</td>
-                            <td>{new Date(b.proiectie?.dataOraStart).toLocaleString()}</td>
-                            <td>{b.proiectie?.sala?.nume}</td>
-                            <td>{b.loc?.numarRand}</td>
-                            <td>{b.loc?.numarLoc}</td>
-                            <td>{b.status}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </Table>
+                    <div className="d-flex flex-wrap gap-3 justify-content-center">
+                      {bilete.map((b) => (
+                        <Card
+                          key={b.biletId}
+                          style={{
+                            width: '250px',
+                            borderRadius: '12px',
+                            background: '#fff3e0',
+                            boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+                          }}
+                        >
+                          <Card.Body className="d-flex flex-column align-items-center">
+                            <Card.Title className="text-center">{b.proiectie?.film?.titlu}</Card.Title>
+                            <Card.Text className="text-center mb-1">
+                              <strong>Data & Ora:</strong> {new Date(b.proiectie?.dataOraStart).toLocaleString()}
+                            </Card.Text>
+                            <Card.Text className="text-center mb-1">
+                              <strong>Sala:</strong> {b.proiectie?.sala?.nume || b.sala?.nume}
+                            </Card.Text>
+                            <Card.Text className="text-center mb-1">
+                              <strong>Rand / Loc:</strong> {b.loc?.numarRand} / {b.loc?.numarLoc}
+                            </Card.Text>
+                            <Card.Text className="text-center mb-2">
+                              <strong>Status:</strong> {b.status}
+                            </Card.Text>
+                            {qrCodes[b.biletId] && (
+                              <img src={qrCodes[b.biletId]} alt="QR Code" width={100} height={100} />
+                            )}
+                          </Card.Body>
+                        </Card>
+                      ))}
+                    </div>
                   )}
                 </Tab.Pane>
+
               </Tab.Content>
             </Col>
           </Row>
