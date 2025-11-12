@@ -12,18 +12,20 @@ const BookTicket = () => {
   const [message, setMessage] = useState("");
   const [user, setUser] = useState(null);
 
+  // Obținerea utilizatorului
   useEffect(() => {
-  const token = localStorage.getItem("jwt");
-  if (!token) return;
+    const token = localStorage.getItem("jwt");
+    if (!token) return;
 
-  fetch("https://localhost:7278/api/auth/me", {
-    headers: { "Authorization": `Bearer ${token}` }
-  })
-    .then(res => res.ok ? res.json() : null)
-    .then(data => setUser(data))
-    .catch(err => console.error(err));
-}, []);
+    fetch("https://localhost:7278/api/auth/me", {
+      headers: { "Authorization": `Bearer ${token}` }
+    })
+      .then(res => res.ok ? res.json() : null)
+      .then(data => setUser(data))
+      .catch(err => console.error(err));
+  }, []);
 
+  // Lista filmelor
   useEffect(() => {
     fetch("https://localhost:7278/api/film")
       .then(res => res.json())
@@ -31,6 +33,7 @@ const BookTicket = () => {
       .catch(err => console.error(err));
   }, []);
 
+  // Lista proiectiilor după film
   useEffect(() => {
     if (!selectedFilm) return;
 
@@ -40,56 +43,66 @@ const BookTicket = () => {
       .catch(err => console.error(err));
   }, [selectedFilm]);
 
+  // Obținerea locurilor și locurilor ocupate pentru proiectie
   useEffect(() => {
     if (!selectedProiectie) return;
 
+    // 1. Preluăm proiectia selectată
     fetch(`https://localhost:7278/api/proiectie/${selectedProiectie}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error("Proiecția nu a fost găsită");
+        return res.json();
+      })
       .then(data => {
-        const salaId = data.sala?.salaId;
+        const salaId = data.salaId; // modificat pentru ADO.NET
         if (!salaId) return;
 
+        // 2. Preluăm locurile din sala
         fetch(`https://localhost:7278/api/loc/bysala/${salaId}`)
-          .then(res => res.json())
+          .then(res => {
+            if (!res.ok) throw new Error("Locurile nu au fost găsite");
+            return res.json();
+          })
           .then(locuriData => setLocuri(locuriData))
-          .catch(err => console.error(err));
+          .catch(err => console.error("Eroare la preluarea locurilor:", err));
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error("Eroare la preluarea proiecției:", err));
 
+    // 3. Preluăm locurile ocupate pentru proiectie
     fetch(`https://localhost:7278/api/bilet/ocupate/${selectedProiectie}`)
-      .then(res => res.json())
+      .then(res => res.ok ? res.json() : [])
       .then(data => setOcupate(data))
-      .catch(err => console.error(err));
+      .catch(err => console.error("Eroare la preluarea locurilor ocupate:", err));
   }, [selectedProiectie]);
 
   const handleBook = async () => {
-  if (!selectedLoc || !selectedProiectie || !user) {
-    setMessage("Selectează un loc și o proiecție!");
-    return;
-  }
+    if (!selectedLoc || !selectedProiectie || !user) {
+      setMessage("Selectează un loc și o proiecție!");
+      return;
+    }
 
-  const response = await fetch("https://localhost:7278/api/bilet", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
-    },
-    body: JSON.stringify({
-      proiectieId: parseInt(selectedProiectie),
-      locId: selectedLoc,
-      utilizatorId: user.utilizatorId, // folosim id-ul real
-      dataRezervare: new Date().toISOString()
-    }),
-  });
+    const response = await fetch("https://localhost:7278/api/bilet", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+      },
+      body: JSON.stringify({
+        proiectieId: parseInt(selectedProiectie),
+        locId: selectedLoc,
+        utilizatorId: user.utilizatorId,
+        dataRezervare: new Date().toISOString()
+      }),
+    });
 
-  if (response.ok) {
-    setMessage("✅ Bilet rezervat cu succes!");
-  } else {
-    const errorText = await response.text();
-    console.error("Server error:", errorText);
-    setMessage("❌ Eroare la rezervare: " + errorText);
-  }
-};
+    if (response.ok) {
+      setMessage("✅ Bilet rezervat cu succes!");
+    } else {
+      const errorText = await response.text();
+      console.error("Server error:", errorText);
+      setMessage("❌ Eroare la rezervare: " + errorText);
+    }
+  };
 
   return (
     <Container className="py-5">
@@ -119,16 +132,16 @@ const BookTicket = () => {
           <Form.Group className="mb-3">
             <Form.Label>Proiecție</Form.Label>
             <Form.Select
-  value={selectedProiectie || ""}
-  onChange={(e) => setSelectedProiectie(e.target.value)}
->
-  <option value="">Selectează proiecția</option>
-  {proiectii.map(p => (
-    <option key={p.proiectieId} value={p.proiectieId}>
-      {new Date(p.dataOraStart).toLocaleString()} — {p.numeSala}
-    </option>
-  ))}
-</Form.Select>
+              value={selectedProiectie || ""}
+              onChange={(e) => setSelectedProiectie(e.target.value)}
+            >
+              <option value="">Selectează proiecția</option>
+              {proiectii.map(p => (
+                <option key={p.proiectieId} value={p.proiectieId}>
+                  {new Date(p.dataOraStart).toLocaleString()} — {p.numeSala}
+                </option>
+              ))}
+            </Form.Select>
           </Form.Group>
         )}
 
@@ -156,16 +169,12 @@ const BookTicket = () => {
                             ocupat
                               ? "secondary"
                               : esteSelectat
-                              ? "success"
-                              : "outline-primary"
+                                ? "success"
+                                : "outline-primary"
                           }
                           disabled={ocupat}
                           onClick={() => setSelectedLoc(loc.locId)}
-                          style={{
-                            width: "45px",
-                            height: "45px",
-                            borderRadius: "8px",
-                          }}
+                          style={{ width: "45px", height: "45px", borderRadius: "8px" }}
                         >
                           {loc.numarLoc}
                         </Button>

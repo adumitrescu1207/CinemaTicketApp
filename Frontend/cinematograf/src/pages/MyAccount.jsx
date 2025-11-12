@@ -134,17 +134,20 @@ const MyAccount = () => {
                           <Card.Body className="d-flex flex-column align-items-center">
                             <Card.Title className="text-center">{b.proiectie?.film?.titlu}</Card.Title>
                             <Card.Text className="text-center mb-1">
-                              <strong>Data & Ora:</strong> {new Date(b.proiectie?.dataOraStart).toLocaleString()}
-                            </Card.Text>
-                            <Card.Text className="text-center mb-1">
-                              <strong>Sala:</strong> {b.proiectie?.sala?.nume || b.sala?.nume}
-                            </Card.Text>
-                            <Card.Text className="text-center mb-1">
-                              <strong>Rand / Loc:</strong> {b.loc?.numarRand} / {b.loc?.numarLoc}
-                            </Card.Text>
-                            <Card.Text className="text-center mb-2">
-                              <strong>Status:</strong> {b.status}
-                            </Card.Text>
+                              <strong>Data & Ora:</strong>{" "}
+                                {b.proiectie?.dataOraStart
+                                  ? new Date(b.proiectie.dataOraStart).toLocaleString()
+                                  : "Nevalidă"}
+                              </Card.Text>
+
+                              <Card.Text className="text-center mb-1">
+                                <strong>Sala:</strong> {b.proiectie?.sala?.nume || b.sala?.nume || "Nevalidă"}
+                              </Card.Text>
+
+                              <Card.Text className="text-center mb-1">
+                                <strong>Rand / Loc:</strong>{" "}
+                                {b.loc?.numarRand != null ? b.loc.numarRand : "-"} / {b.loc?.numarLoc != null ? b.loc.numarLoc : "-"}
+                              </Card.Text>
                             {qrCodes[b.biletId] && (
                               <img src={qrCodes[b.biletId]} alt="QR Code" width={100} height={100} />
                             )}

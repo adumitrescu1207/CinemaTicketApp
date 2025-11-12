@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\utilizatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\utilizatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\biletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\biletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\proiectiecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\proiectiecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\models\\biletdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\models\\biletdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\models\\proiectiedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\models\\proiectiedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\loccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\loccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\salacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\salacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\models\\bilet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,40 +47,16 @@
       "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\salacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\salacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\loccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\loccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\utilizatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\utilizatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\models\\proiectiedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\models\\proiectiedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|solutionrelative:cinematograf\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A812AB9-5F5A-4ABC-B54D-2F6789F4DC0D}|Cinematograf\\Cinematograf.csproj|c:\\users\\alexa.alexandra\\desktop\\master\\baze de date\\cinematograf\\proiectcinematograf\\backend\\cinematograf\\cinematograf\\models\\utilizator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,31 +86,120 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\LoginDto.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Models\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\LoginDto.cs",
-              "RelativeToolTip": "Cinematograf\\Models\\LoginDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\appsettings.json",
+              "RelativeDocumentMoniker": "Cinematograf\\appsettings.json",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\appsettings.json",
+              "RelativeToolTip": "Cinematograf\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-30T13:16:27.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BiletController.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\BiletController.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\BiletController.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\BiletController.cs",
+              "RelativeToolTip": "Cinematograf\\Controllers\\BiletController.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAwGwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T15:55:15.933Z"
+              "WhenOpened": "2025-10-28T15:37:03.804Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "UtilizatorController.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\UtilizatorController.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\UtilizatorController.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\UtilizatorController.cs",
-              "RelativeToolTip": "Cinematograf\\Controllers\\UtilizatorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAJAAAAAAAAAA==",
+              "Title": "SalaController.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\SalaController.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\SalaController.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\SalaController.cs",
+              "RelativeToolTip": "Cinematograf\\Controllers\\SalaController.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAcwIIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T15:36:39.623Z"
+              "WhenOpened": "2025-10-28T15:33:32.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FilmController.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\FilmController.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\FilmController.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\FilmController.cs",
+              "RelativeToolTip": "Cinematograf\\Controllers\\FilmController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAACFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T09:28:02.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Bilet.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Bilet.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Models\\Bilet.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Bilet.cs",
+              "RelativeToolTip": "Cinematograf\\Models\\Bilet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T09:17:27.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProiectieDto.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\ProiectieDto.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Models\\ProiectieDto.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\ProiectieDto.cs",
+              "RelativeToolTip": "Cinematograf\\Models\\ProiectieDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T08:17:15.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Utilizator.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Utilizator.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Models\\Utilizator.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Utilizator.cs",
+              "RelativeToolTip": "Cinematograf\\Models\\Utilizator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T09:17:11.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Loc.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Loc.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Models\\Loc.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Loc.cs",
+              "RelativeToolTip": "Cinematograf\\Models\\Loc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T09:16:29.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Cinematograf\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAIwIkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T13:07:41.634Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -116,26 +209,27 @@
               "RelativeDocumentMoniker": "Cinematograf\\Controllers\\LocController.cs",
               "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\LocController.cs",
               "RelativeToolTip": "Cinematograf\\Controllers\\LocController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwCUAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAYwM8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T15:36:00.59Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProiectieController.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\ProiectieController.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\ProiectieController.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\ProiectieController.cs",
-              "RelativeToolTip": "Cinematograf\\Controllers\\ProiectieController.cs",
-              "ViewState": "AgIAAB4AAAAAkZmZmZkGwDgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T15:34:40.117Z",
+              "WhenOpened": "2025-10-28T15:36:00.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "UtilizatorController.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\UtilizatorController.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\UtilizatorController.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\UtilizatorController.cs",
+              "RelativeToolTip": "Cinematograf\\Controllers\\UtilizatorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T15:36:39.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Program.cs",
               "RelativeDocumentMoniker": "Cinematograf\\Program.cs",
@@ -148,105 +242,44 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\appsettings.json",
-              "RelativeDocumentMoniker": "Cinematograf\\appsettings.json",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\appsettings.json",
-              "RelativeToolTip": "Cinematograf\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-30T13:16:27.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BiletController.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\BiletController.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\BiletController.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\BiletController.cs",
-              "RelativeToolTip": "Cinematograf\\Controllers\\BiletController.cs",
-              "ViewState": "AgIAACkAAACAITMzMzMVwDYAAAAtAAAAAAAAAA==",
+              "Title": "ProiectieController.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\ProiectieController.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\ProiectieController.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\ProiectieController.cs",
+              "RelativeToolTip": "Cinematograf\\Controllers\\ProiectieController.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAcwMkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T15:37:03.804Z",
+              "WhenOpened": "2025-10-28T15:34:40.117Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SalaController.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\SalaController.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\SalaController.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\SalaController.cs",
-              "RelativeToolTip": "Cinematograf\\Controllers\\SalaController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T15:33:32.485Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FilmController.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\FilmController.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\FilmController.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\FilmController.cs",
-              "RelativeToolTip": "Cinematograf\\Controllers\\FilmController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAwwEsAAAAJAAAAAAAAAA==",
+              "Title": "BiletDto.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\BiletDto.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Models\\BiletDto.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\BiletDto.cs",
+              "RelativeToolTip": "Cinematograf\\Models\\BiletDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T09:28:02.448Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Bilet.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Bilet.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Models\\Bilet.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Bilet.cs",
-              "RelativeToolTip": "Cinematograf\\Models\\Bilet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T09:17:27.061Z",
+              "WhenOpened": "2025-11-12T16:47:04.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProiectieDto.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\ProiectieDto.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Models\\ProiectieDto.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\ProiectieDto.cs",
-              "RelativeToolTip": "Cinematograf\\Models\\ProiectieDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\LoginDto.cs",
+              "RelativeDocumentMoniker": "Cinematograf\\Models\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\LoginDto.cs",
+              "RelativeToolTip": "Cinematograf\\Models\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T08:17:15.359Z"
+              "WhenOpened": "2025-11-03T15:55:15.933Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Utilizator.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Utilizator.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Models\\Utilizator.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Utilizator.cs",
-              "RelativeToolTip": "Cinematograf\\Models\\Utilizator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T09:17:11.375Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Loc.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Loc.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Models\\Loc.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Loc.cs",
-              "RelativeToolTip": "Cinematograf\\Models\\Loc.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T09:16:29.916Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "Film.cs",
               "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Film.cs",
               "RelativeDocumentMoniker": "Cinematograf\\Models\\Film.cs",
@@ -258,19 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Cinematograf\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Cinematograf\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAIwGMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T13:07:41.634Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Proiectie.cs",
               "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Proiectie.cs",
               "RelativeDocumentMoniker": "Cinematograf\\Models\\Proiectie.cs",
@@ -282,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Sala.cs",
               "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Models\\Sala.cs",
               "RelativeDocumentMoniker": "Cinematograf\\Models\\Sala.cs",
@@ -294,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\alexa.ALEXANDRA\\Desktop\\Master\\Baze de date\\Cinematograf\\ProiectCinematograf\\Backend\\Cinematograf\\Cinematograf\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Cinematograf\\Data\\AppDbContext.cs",
