@@ -48,9 +48,6 @@ const handleLogout = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/movies">Movies</Nav.Link>
-            <Nav.Link as={Link} to="/about">About</Nav.Link>
-            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
 
             {user && (
               <Nav.Link as={Link} to="/book"><strong>Book Ticket</strong></Nav.Link>
