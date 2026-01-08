@@ -6,29 +6,29 @@ import logo from "../images/movie-ticket.png";
 const Header = () => {
   const [user, setUser] = useState(null);
 
-useEffect(() => {
-  const token = localStorage.getItem("jwt");
-  if (!token) return;
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    if (!token) return;
 
-  fetch("https://localhost:7278/api/auth/me", {
-    method: "GET",
-    headers: {
-      "Authorization": `Bearer ${token}`
-    },
-  })
-    .then(res => res.ok ? res.json() : null)
-    .then(data => {
-      if (data) setUser(data);
+    fetch("https://localhost:7278/api/auth/me", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     })
-    .catch(err => console.error(err));
-}, []);
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (data) setUser(data);
+      })
+      .catch(err => console.error(err));
+  }, []);
 
-const handleLogout = () => {
-  localStorage.removeItem("jwt");
-  fetch("https://localhost:7278/api/auth/logout", { method: "POST" });
-  setUser(null);
-  window.location.href = "/";
-};
+  const handleLogout = () => {
+    localStorage.removeItem("jwt");
+    fetch("https://localhost:7278/api/auth/logout", { method: "POST" });
+    setUser(null);
+    window.location.href = "/";
+  };
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
@@ -47,16 +47,19 @@ const handleLogout = () => {
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/">Acasă</Nav.Link>
 
             {user && (
-              <Nav.Link as={Link} to="/book"><strong>Book Ticket</strong></Nav.Link>
+              <Nav.Link as={Link} to="/book">
+                <strong>Rezervă bilet</strong>
+              </Nav.Link>
             )}
 
             {user && (
-              <Nav.Link as={Link} to="/myaccount"><strong>My account</strong></Nav.Link>
+              <Nav.Link as={Link} to="/myaccount">
+                <strong>Contul meu</strong>
+              </Nav.Link>
             )}
-
 
             {user ? (
               <>
@@ -68,11 +71,11 @@ const handleLogout = () => {
                   size="sm"
                   onClick={handleLogout}
                 >
-                  Logout
+                  Deconectare
                 </Button>
               </>
             ) : (
-              <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              <Nav.Link as={Link} to="/login">Autentificare</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>

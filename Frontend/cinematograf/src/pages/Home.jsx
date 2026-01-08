@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Form, InputGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -20,38 +20,37 @@ const Home = () => {
 
   return (
     <Container className="my-5">
+      {/* ---------------- TITLU ---------------- */}
       <div className="text-center mb-5">
-        <h1>Welcome to Cinema Ticket!</h1>
-        <p>Book your favorite movies with just a few clicks.</p>
+        <h1>Bine ai venit la Cinema Ticket</h1>
+        <p>Rezervă bilete la filmele tale preferate rapid și ușor.</p>
       </div>
 
+      {/* ---------------- CAUTARE ---------------- */}
       <Row className="justify-content-center mb-5">
         <Col md={6}>
-          <Form
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
-            <Form.Group controlId="searchMovie">
+          <Form onSubmit={(e) => e.preventDefault()}>
+            <InputGroup>
               <Form.Control
                 type="text"
-                placeholder="Search for movies..."
+                placeholder="Caută un film..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-            </Form.Group>
-            <Button variant="primary" className="mt-3" type="submit">
-              Search
-            </Button>
+              <Button variant="secondary">
+                Caută
+              </Button>
+            </InputGroup>
           </Form>
         </Col>
       </Row>
 
-      <h2 className="mb-4">Movies</h2>
+      {/* ---------------- LISTA FILME ---------------- */}
+      <h2 className="mb-4">Filme disponibile</h2>
       <Row>
         {filteredMovies.map((movie) => (
           <Col md={4} className="mb-4" key={movie.filmId}>
-            <Card>
+            <Card className="h-100 shadow-sm">
               <Card.Body>
                 <Card.Title>{movie.titlu}</Card.Title>
                 <Card.Text>{movie.descriere}</Card.Text>

@@ -13,33 +13,37 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await fetch("https://localhost:7278/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: formData.email,
-        parolaHash: formData.password
-      }),
-    });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-    if (response.ok) {
-      const data = await response.json();
-      const jwt = data.token;
-      localStorage.setItem("jwt", jwt);
-      alert("Autentificare reușită!");
-      window.location.href = "/";
-    } else {
-      const errorText = await response.text();
-      alert(errorText || "Eroare la autentificare.");
+    try {
+      const response = await fetch("https://localhost:7278/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          parolaHash: formData.password,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const jwt = data.token;
+        localStorage.setItem("jwt", jwt);
+        alert("Autentificare reușită!");
+        window.location.href = "/";
+      } else {
+        const errorText = await response.text();
+        alert(errorText || "Eroare la autentificare.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Serverul nu răspunde.");
+    } finally {
+      setLoading(false);
     }
-  } catch (error) {
-    console.error(error);
-    alert("Serverul nu răspunde.");
-  }
-};
+  };
 
   return (
     <Container
@@ -50,14 +54,14 @@ const handleSubmit = async (e) => {
         <Col md={6} lg={4}>
           <Card className="shadow-lg border-0 rounded-4">
             <Card.Body className="p-4">
-              <h2 className="text-center mb-4">Login</h2>
+              <h2 className="text-center mb-4">Autentificare</h2>
 
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label>Adresă de email</Form.Label>
                   <Form.Control
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Introdu adresa de email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -66,10 +70,10 @@ const handleSubmit = async (e) => {
                 </Form.Group>
 
                 <Form.Group className="mb-4" controlId="formPassword">
-                  <Form.Label>Password</Form.Label>
+                  <Form.Label>Parolă</Form.Label>
                   <Form.Control
                     type="password"
-                    placeholder="Enter your password"
+                    placeholder="Introdu parola"
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
@@ -83,15 +87,15 @@ const handleSubmit = async (e) => {
                   disabled={loading}
                   className="w-100 py-2 fw-semibold"
                 >
-                  {loading ? "Logging in..." : "Login"}
+                  {loading ? "Se autentifică..." : "Autentificare"}
                 </Button>
               </Form>
 
               <div className="text-center mt-3">
                 <small>
-                  Don’t have an account?{" "}
+                  Nu ai cont?{" "}
                   <a href="/register" className="text-dark fw-semibold">
-                    Register
+                    Creează unul
                   </a>
                 </small>
               </div>
