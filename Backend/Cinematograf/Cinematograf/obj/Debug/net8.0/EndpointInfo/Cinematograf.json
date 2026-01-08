@@ -311,6 +311,52 @@
         }
       }
     },
+    "/api/Bilet/confirmare/{id}": {
+      "put": {
+        "tags": [
+          "Bilet"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bilet/pret/{biletId}": {
+      "get": {
+        "tags": [
+          "Bilet"
+        ],
+        "parameters": [
+          {
+            "name": "biletId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Film": {
       "get": {
         "tags": [

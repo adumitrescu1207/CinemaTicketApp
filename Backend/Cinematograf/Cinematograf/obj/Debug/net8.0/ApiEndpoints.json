@@ -141,6 +141,22 @@
   },
   {
     "ContainingType": "Cinematograf.Controllers.BiletController",
+    "Method": "ConfirmBilet",
+    "RelativePath": "api/Bilet/confirmare/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cinematograf.Controllers.BiletController",
     "Method": "GetLocuriOcupate",
     "RelativePath": "api/Bilet/ocupate/{proiectieId}",
     "HttpMethod": "GET",
@@ -164,6 +180,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Cinematograf.Controllers.BiletController",
+    "Method": "GetPretBilet",
+    "RelativePath": "api/Bilet/pret/{biletId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "biletId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Cinematograf.Controllers.BiletController",

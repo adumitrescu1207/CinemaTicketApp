@@ -64,7 +64,7 @@ const Header = () => {
             {user ? (
               <>
                 <span className="text-light m-4">
-                  Bun venit, <strong>{user.nume}</strong>!
+                  Bun venit, <strong>{user.prenume}</strong>!
                 </span>
                 <Button
                   variant="outline-light"

@@ -261,5 +261,52 @@ namespace Cinematograf.Controllers
 
             return NoContent();
         }
+
+        // PUT: api/bilet/confirmare/{id}
+        [HttpPut("confirmare/{id}")]
+        public async Task<IActionResult> ConfirmBilet(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string updateQuery = "UPDATE Bilete SET Status = 'Confirmat' WHERE BiletId = @id";
+                SqlCommand cmd = new SqlCommand(updateQuery, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                await conn.OpenAsync();
+                int rowsAffected = await cmd.ExecuteNonQueryAsync();
+
+                if (rowsAffected == 0)
+                    return NotFound();
+
+                return Ok(new { message = "Bilet confirmat!" });
+            }
+        }
+
+        [HttpGet("pret/{biletId}")]
+        public async Task<IActionResult> GetPretBilet(int biletId)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string query = @"
+            SELECT p.Pret 
+            FROM Bilete b
+            INNER JOIN Proiectii p ON b.ProiectieId = p.ProiectieId
+            WHERE b.BiletId = @id";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", biletId);
+
+                await conn.OpenAsync();
+                var pret = await cmd.ExecuteScalarAsync();
+
+                if (pret == null)
+                    return NotFound();
+
+                return Ok(new { pret = Convert.ToDecimal(pret) });
+            }
+        }
+
+
+
     }
 }
