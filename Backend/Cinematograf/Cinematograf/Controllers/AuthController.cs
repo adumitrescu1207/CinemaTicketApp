@@ -142,7 +142,7 @@ namespace Cinematograf.Controllers
                 if (utilizator == null)
                     return Unauthorized();
 
-                return Ok(new { utilizator.UtilizatorId, utilizator.Nume, utilizator.Email });
+                return Ok(new { utilizator.UtilizatorId, utilizator.Nume, utilizator.Prenume, utilizator.Email });
             }
             catch
             {

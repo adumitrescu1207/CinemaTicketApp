@@ -119,17 +119,16 @@ namespace Cinematograf.Controllers
             {
                 await connection.OpenAsync();
                 string query = @"
-                    UPDATE Utilizatori
-                    SET Nume = @Nume, Prenume = @Prenume, Email = @Email, ParolaHash = @ParolaHash
-                    WHERE UtilizatorId = @Id";
+            UPDATE Utilizatori
+            SET Nume = @Nume, Prenume = @Prenume, Email = @Email
+            WHERE UtilizatorId = @Id";
 
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
-                    command.Parameters.AddWithValue("@Nume", utilizator.Nume);
-                    command.Parameters.AddWithValue("@Prenume", utilizator.Prenume);
-                    command.Parameters.AddWithValue("@Email", utilizator.Email);
-                    command.Parameters.AddWithValue("@ParolaHash", utilizator.ParolaHash);
+                    command.Parameters.AddWithValue("@Nume", utilizator.Nume ?? "");
+                    command.Parameters.AddWithValue("@Prenume", utilizator.Prenume ?? "");
+                    command.Parameters.AddWithValue("@Email", utilizator.Email ?? "");
 
                     int rowsAffected = await command.ExecuteNonQueryAsync();
                     if (rowsAffected == 0)
@@ -139,6 +138,8 @@ namespace Cinematograf.Controllers
 
             return NoContent();
         }
+
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUtilizator(int id)

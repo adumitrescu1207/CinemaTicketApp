@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cinematograf")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b29a5ea7acb60ec1a866b5defb96f6ab3560c2d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67e5a40ec8ececd4e527ece8cdd21f7b6773a27d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cinematograf")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cinematograf")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
