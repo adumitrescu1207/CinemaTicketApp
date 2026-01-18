@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
-using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -30,14 +29,15 @@ namespace Cinematograf.Controllers
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                string query = @"SELECT b.*, 
-                                        p.FilmId, p.SalaId, 
-                                        u.UtilizatorId, u.Nume AS NumeUtilizator, 
-                                        l.Numar AS NumarLoc
-                                 FROM Bilete b
-                                 LEFT JOIN Proiectii p ON b.ProiectieId = p.ProiectieId
-                                 LEFT JOIN Utilizatori u ON b.UtilizatorId = u.UtilizatorId
-                                 LEFT JOIN Locuri l ON b.LocId = l.LocId";
+                string query = @"
+                SELECT *
+                FROM Bilete
+                WHERE ProiectieId IN (
+                    SELECT ProiectieId FROM Proiectii
+                )
+                AND UtilizatorId IN (
+                    SELECT UtilizatorId FROM Utilizatori
+                )";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 await conn.OpenAsync();
@@ -69,7 +69,15 @@ namespace Cinematograf.Controllers
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                string query = @"SELECT * FROM Bilete WHERE BiletId = @id";
+                string query = @"
+                SELECT *
+                FROM Bilete
+                WHERE BiletId IN (
+                    SELECT BiletId
+                    FROM Bilete
+                    WHERE BiletId = @id
+                )";
+
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
 
@@ -97,25 +105,38 @@ namespace Cinematograf.Controllers
             return Ok(bilet);
         }
 
+        // GET: api/bilet/utilizator/{utilizatorId}
         [HttpGet("utilizator/{utilizatorId}")]
         public async Task<IActionResult> GetBileteByUtilizator(int utilizatorId)
         {
             var bilete = new List<BiletDto>();
 
-            using (var conn = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
+            using (var conn = new SqlConnection(_connectionString))
             {
                 await conn.OpenAsync();
+
                 var cmd = new SqlCommand(@"
-            SELECT b.BiletId, b.DataRezervare, b.Status,
-                   p.ProiectieId, p.DataOraStart, f.Titlu AS TitluFilm,
-                   s.SalaId, s.Nume AS NumeSala,
-                   l.LocId, l.NumarRand, l.NumarLoc
+            SELECT 
+                b.BiletId,
+                b.DataRezervare,
+                b.Status,
+                (SELECT p.ProiectieId FROM Proiectii p WHERE p.ProiectieId = b.ProiectieId) AS ProiectieId,
+                (SELECT p.DataOraStart FROM Proiectii p WHERE p.ProiectieId = b.ProiectieId) AS DataOraStart,
+                (SELECT f.Titlu FROM Filme f 
+                 WHERE f.FilmId = (SELECT p2.FilmId FROM Proiectii p2 WHERE p2.ProiectieId = b.ProiectieId)
+                ) AS TitluFilm,
+                (SELECT s.SalaId FROM Sali s 
+                 WHERE s.SalaId = (SELECT p3.SalaId FROM Proiectii p3 WHERE p3.ProiectieId = b.ProiectieId)
+                ) AS SalaId,
+                (SELECT s.Nume FROM Sali s 
+                 WHERE s.SalaId = (SELECT p4.SalaId FROM Proiectii p4 WHERE p4.ProiectieId = b.ProiectieId)
+                ) AS NumeSala,
+                (SELECT l.LocId FROM Locuri l WHERE l.LocId = b.LocId) AS LocId,
+                (SELECT l.NumarRand FROM Locuri l WHERE l.LocId = b.LocId) AS NumarRand,
+                (SELECT l.NumarLoc FROM Locuri l WHERE l.LocId = b.LocId) AS NumarLoc
             FROM Bilete b
-            INNER JOIN Proiectii p ON b.ProiectieId = p.ProiectieId
-            INNER JOIN Filme f ON p.FilmId = f.FilmId
-            INNER JOIN Sali s ON p.SalaId = s.SalaId
-            LEFT JOIN Locuri l ON b.LocId = l.LocId
-            WHERE b.UtilizatorId = @userId", conn);
+            WHERE b.UtilizatorId = @userId
+        ", conn);
 
                 cmd.Parameters.AddWithValue("@userId", utilizatorId);
 
@@ -158,7 +179,15 @@ namespace Cinematograf.Controllers
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                string query = @"SELECT LocId FROM Bilete WHERE ProiectieId = @pid";
+                string query = @"
+                SELECT LocId
+                FROM Locuri
+                WHERE LocId IN (
+                    SELECT LocId
+                    FROM Bilete
+                    WHERE ProiectieId = @pid
+                )";
+
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@pid", proiectieId);
 
@@ -178,15 +207,15 @@ namespace Cinematograf.Controllers
         {
             try
             {
-                // === JWT VALIDATION ===
                 var jwtHeader = Request.Headers["Authorization"].ToString();
                 if (string.IsNullOrEmpty(jwtHeader))
-                    return Unauthorized(new { message = "JWT lipsă" });
+                    return Unauthorized();
 
                 var jwt = jwtHeader.Replace("Bearer ", "");
-                var tokenHandler = new JwtSecurityTokenHandler();
+                var handler = new JwtSecurityTokenHandler();
                 var key = Encoding.UTF8.GetBytes(_config["Jwt:Key"]);
-                tokenHandler.ValidateToken(jwt, new TokenValidationParameters
+
+                handler.ValidateToken(jwt, new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
@@ -194,49 +223,47 @@ namespace Cinematograf.Controllers
                     ValidateAudience = false
                 }, out SecurityToken validatedToken);
 
-                var jwtToken = (JwtSecurityToken)validatedToken;
-                var utilizatorId = int.Parse(jwtToken.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value);
-
-                // === Complete data ===
-                bilet.UtilizatorId = utilizatorId;
+                var token = (JwtSecurityToken)validatedToken;
+                bilet.UtilizatorId = int.Parse(token.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value);
                 bilet.DataRezervare = DateTime.UtcNow;
-                if (string.IsNullOrEmpty(bilet.Status))
-                    bilet.Status = "In asteptare";
+                bilet.Status ??= "In asteptare";
 
-                // Get SalaId based on ProiectieId
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
-                    string getSalaQuery = "SELECT SalaId FROM Proiectii WHERE ProiectieId = @pid";
-                    SqlCommand salaCmd = new SqlCommand(getSalaQuery, conn);
-                    salaCmd.Parameters.AddWithValue("@pid", bilet.ProiectieId);
+                    string insertQuery = @"
+                    INSERT INTO Bilete (ProiectieId, SalaId, LocId, UtilizatorId, DataRezervare, Status)
+                    SELECT 
+                        @ProiectieId,
+                        SalaId,
+                        @LocId,
+                        @UtilizatorId,
+                        @DataRezervare,
+                        @Status
+                    FROM Proiectii
+                    WHERE ProiectieId IN (
+                        SELECT ProiectieId
+                        FROM Proiectii
+                        WHERE ProiectieId = @ProiectieId
+                    );
+
+                    SELECT SCOPE_IDENTITY();";
+
+                    SqlCommand cmd = new SqlCommand(insertQuery, conn);
+                    cmd.Parameters.AddWithValue("@ProiectieId", bilet.ProiectieId);
+                    cmd.Parameters.AddWithValue("@LocId", bilet.LocId);
+                    cmd.Parameters.AddWithValue("@UtilizatorId", bilet.UtilizatorId);
+                    cmd.Parameters.AddWithValue("@DataRezervare", bilet.DataRezervare);
+                    cmd.Parameters.AddWithValue("@Status", bilet.Status);
 
                     await conn.OpenAsync();
-                    var salaResult = await salaCmd.ExecuteScalarAsync();
-                    if (salaResult == null)
-                        return BadRequest("Proiecție invalidă.");
-                    bilet.SalaId = Convert.ToInt32(salaResult);
-
-                    // === INSERT BILET ===
-                    string insertQuery = @"INSERT INTO Bilete (ProiectieId, SalaId, LocId, UtilizatorId, DataRezervare, Status)
-                                           VALUES (@ProiectieId, @SalaId, @LocId, @UtilizatorId, @DataRezervare, @Status);
-                                           SELECT SCOPE_IDENTITY();";
-
-                    SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
-                    insertCmd.Parameters.AddWithValue("@ProiectieId", bilet.ProiectieId);
-                    insertCmd.Parameters.AddWithValue("@SalaId", bilet.SalaId);
-                    insertCmd.Parameters.AddWithValue("@LocId", bilet.LocId);
-                    insertCmd.Parameters.AddWithValue("@UtilizatorId", bilet.UtilizatorId);
-                    insertCmd.Parameters.AddWithValue("@DataRezervare", bilet.DataRezervare);
-                    insertCmd.Parameters.AddWithValue("@Status", bilet.Status);
-
-                    bilet.BiletId = Convert.ToInt32(await insertCmd.ExecuteScalarAsync());
+                    bilet.BiletId = Convert.ToInt32(await cmd.ExecuteScalarAsync());
                 }
 
-                return CreatedAtAction(nameof(GetBilet), new { id = bilet.BiletId }, bilet);
+                return Ok(bilet);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = ex.Message });
+                return StatusCode(500, ex.Message);
             }
         }
 
@@ -244,22 +271,27 @@ namespace Cinematograf.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBilet(int id)
         {
-            int rowsAffected;
-
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                string query = "DELETE FROM Bilete WHERE BiletId = @id";
+                string query = @"
+                DELETE FROM Bilete
+                WHERE BiletId IN (
+                    SELECT BiletId
+                    FROM Bilete
+                    WHERE BiletId = @id
+                )";
+
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
 
                 await conn.OpenAsync();
-                rowsAffected = await cmd.ExecuteNonQueryAsync();
+                int rows = await cmd.ExecuteNonQueryAsync();
+
+                if (rows == 0)
+                    return NotFound();
+
+                return NoContent();
             }
-
-            if (rowsAffected == 0)
-                return NotFound();
-
-            return NoContent();
         }
 
         // PUT: api/bilet/confirmare/{id}
@@ -268,30 +300,42 @@ namespace Cinematograf.Controllers
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                string updateQuery = "UPDATE Bilete SET Status = 'Confirmat' WHERE BiletId = @id";
-                SqlCommand cmd = new SqlCommand(updateQuery, conn);
+                string query = @"
+                UPDATE Bilete
+                SET Status = 'Confirmat'
+                WHERE BiletId IN (
+                    SELECT BiletId
+                    FROM Bilete
+                    WHERE BiletId = @id
+                )";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
 
                 await conn.OpenAsync();
-                int rowsAffected = await cmd.ExecuteNonQueryAsync();
+                int rows = await cmd.ExecuteNonQueryAsync();
 
-                if (rowsAffected == 0)
+                if (rows == 0)
                     return NotFound();
 
-                return Ok(new { message = "Bilet confirmat!" });
+                return Ok();
             }
         }
 
+        // GET: api/bilet/pret/{biletId}
         [HttpGet("pret/{biletId}")]
         public async Task<IActionResult> GetPretBilet(int biletId)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 string query = @"
-            SELECT p.Pret 
-            FROM Bilete b
-            INNER JOIN Proiectii p ON b.ProiectieId = p.ProiectieId
-            WHERE b.BiletId = @id";
+                SELECT Pret
+                FROM Proiectii
+                WHERE ProiectieId IN (
+                    SELECT ProiectieId
+                    FROM Bilete
+                    WHERE BiletId = @id
+                )";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", biletId);
@@ -302,11 +346,8 @@ namespace Cinematograf.Controllers
                 if (pret == null)
                     return NotFound();
 
-                return Ok(new { pret = Convert.ToDecimal(pret) });
+                return Ok(pret);
             }
         }
-
-
-
     }
 }
